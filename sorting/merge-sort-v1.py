@@ -1,6 +1,5 @@
 # O(n log n)
-
-def merge(A,B,p,q,r):
+def merge(A,B,p,q,r): # O ( n )
     i = k = p
     j = q
 
@@ -22,9 +21,9 @@ def merge(A,B,p,q,r):
         j += 1
         k += 1
     for t in range(p,r):
-        B[t] = A[t]
+        A[t] = B[t]
 
-def mergesort(A,B,p,r):
+def mergesort(A,B,p,r): # O( log n )
     if r-p > 1:
         q = (r + p) //2
         mergesort(A,B,p,q)
@@ -35,3 +34,5 @@ def msort(A):
     n = len(A)
     B = [0] * n
     mergesort(A,B,0,n)
+
+    return A
