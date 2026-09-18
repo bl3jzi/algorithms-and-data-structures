@@ -4,3 +4,5 @@ env/
 .idea/
 __pycache__/
 *.pyc
+kolokwia/
+offline/
