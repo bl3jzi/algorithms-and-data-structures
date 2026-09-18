@@ -1,9 +1,9 @@
 """
 Intuition:
 
-Sorts an array iteratively from the bottom up by treating individual elements 
-as sorted runs of length 1, then progressively merging adjacent runs of doubling 
-lengths (1, 2, 4, 8, ...) until the entire collection forms a single sorted array, 
+Sorts an array iteratively from the bottom up by treating individual elements
+as sorted runs of length 1, then progressively merging adjacent runs of doubling
+lengths (1, 2, 4, 8, ...) until the entire collection forms a single sorted array,
 completely eliminating recursive call-stack overhead.
 
 
@@ -30,7 +30,7 @@ Complexity:
 """
 
 
-def merge( T: list[int], B: list[int], left: int, mid: int, right: int) -> None:
+def merge(T: list[int], B: list[int], left: int, mid: int, right: int) -> None:
     i = left
     j = mid
     k = left

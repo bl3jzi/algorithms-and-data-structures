@@ -31,7 +31,7 @@ Complexity:
 """
 
 
-def merge( A: list[int], B: list[int], p: int, q: int, r: int) -> None:  # O(r - p)
+def merge(A: list[int], B: list[int], p: int, q: int, r: int) -> None:  # O(r - p)
     i = p
     j = q
     k = p
@@ -63,7 +63,7 @@ def merge( A: list[int], B: list[int], p: int, q: int, r: int) -> None:  # O(r -
         A[t] = B[t]
 
 
-def mergesort( A: list[int], B: list[int], p: int, r: int) -> None:  # O(n log n)
+def mergesort(A: list[int], B: list[int], p: int, r: int) -> None:  # O(n log n)
     if r - p > 1:
         q = (p + r) // 2
         mergesort(A, B, p, q)

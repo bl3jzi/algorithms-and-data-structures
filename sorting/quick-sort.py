@@ -1,9 +1,9 @@
 """
 Intuition:
 
-A divide-and-conquer algorithm that selects a "pivot" element and partitions 
+A divide-and-conquer algorithm that selects a "pivot" element and partitions
 the array around it—rearranging elements so that values smaller than the pivot
-shift to its left and values greater shift to its right. It then recursively 
+shift to its left and values greater shift to its right. It then recursively
 sorts the resulting sub-arrays in-place.
 
 
@@ -11,26 +11,26 @@ Mechanics:
 
 1. Base Case: If the subarray range contains 0 or 1 elements (p >= r), return.
 2. Partition:
-   - Lomuto: Select the last element as pivot. Scan left-to-right, maintaining a 
+   - Lomuto: Select the last element as pivot. Scan left-to-right, maintaining a
      boundary of elements <= pivot. Swap pivot into its exact final rank q.
-   - Hoare: Select the first element as pivot. Use two inward-moving pointers (i, j) 
+   - Hoare: Select the first element as pivot. Use two inward-moving pointers (i, j)
      until inversions are found, swapping them until pointers cross at split index q.
 3. Divide & Conquer:
    - Lomuto: Recurse on [p, q - 1] and [q + 1, r] (pivot is already finalized).
    - Hoare: Recurse on [p, q] and [q + 1, r] (pivot is not guaranteed to be at q).
-4. Tail-Call Optimization: Recurse only on one partition while looping on the other 
+4. Tail-Call Optimization: Recurse only on one partition while looping on the other
    to reduce call-stack consumption.
 
 
 Complexity:
     Time:
         O( n log n ) - best / average (balanced splits dividing data roughly in half)
-        O( n^2 )     - worst (severely skewed splits, e.g., already sorted array with 
+        O( n^2 )     - worst (severely skewed splits, e.g., already sorted array with
                        first/last element chosen as pivot)
 
     Space:
         O( log n )   - average call-stack depth
-        O( n )       - worst-case call-stack depth (mitigated to O(log n) if always 
+        O( n )       - worst-case call-stack depth (mitigated to O(log n) if always
                        recursing on the smaller partition first)
         O( 1 )       - auxiliary heap memory (strictly in-place)
 

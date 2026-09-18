@@ -2,7 +2,7 @@
 Intuition:
 
 Transforms the array into a max-heap where the root is always the largest element.
-It repeatedly swaps the root with the last unsorted element, shrinks the active heap 
+It repeatedly swaps the root with the last unsorted element, shrinks the active heap
 boundary, and restores the heap property to sort the array in-place.
 
 
